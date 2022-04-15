@@ -20,3 +20,6 @@ const readThenAppend = (content, file) => {
     }
   });
 };
+
+
+module.exports = { fileRead, writeToFile, readThenAppend};
