@@ -56,6 +56,11 @@ The following HTML routes should be created:
 
 * `GET *` should return the `index.html` file.
 
+<br>
+<br>
+
+# NEXT UP
+
 The following API routes should be created:
 
 * `GET /api/notes` should read the `db.json` file and return all saved notes as JSON.
