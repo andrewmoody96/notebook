@@ -2,6 +2,7 @@ const fs = require("fs");
 const util = require("util");
 
 // FUNCTIONS
+// Reads the file, but as a promise.
 const fileRead = util.promisify(fs.readFile);
 
 const writeToFile = (location, content) =>
