@@ -9,4 +9,14 @@ const writeToFile = (location, content) =>
     err ? console.error(err) : console.info(`content saved to ${location}`)
   );
 
-  
+const readThenAppend = (content, file) => {
+  fs.readFile(file, "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedData = JSON.parse(data);
+      parsedData.push(content);
+      writeToFile(file, parsedData);
+    }
+  });
+};
