@@ -5,6 +5,7 @@ const PORT = 3001;
 const app = express();
 const fs = require('fs');
 const util = require('util');
+const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
