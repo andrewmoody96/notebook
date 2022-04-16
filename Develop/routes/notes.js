@@ -7,3 +7,5 @@ notes.get('/', (req, res) => {
     console.log('Request Received');
     readFromFile('./db/db.json'.then((data) => res.json(JSON.parse(data))));
 });
+
+module.exports = notes;
