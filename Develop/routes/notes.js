@@ -29,5 +29,22 @@ notes.post('/', (req, res) => {
     }
 });
 
+notes.get('/:note_id', (req, res) => {
+    if (req.params.note_id) {
+        console.log("Showing note with selected ID.")
+        const noteID = req.params.note_id;
+        for (let i = 0; i < db.length; i++) {
+            const currentNote = db[i];
+            if (currentNote.note_id === noteID) {
+                res.json(currentNote);
+                return;
+            };
+        };
+        res.status(404).send('No notes matching selected ID.');
+    } else {
+        res.status(404).send('No ID provided.')
+    };
+});
+
 
 module.exports = notes;
