@@ -2,11 +2,12 @@ const express = require('express');
 const notes = express.Router();
 const db = require('../db/db.json');
 const idGen = require('../helpers/idGen');
+const { fileRead, readThenAppend } = require('../helpers/fsUtils');
 
 
 notes.get('/', (req, res) => {
     console.log('Request Received');
-    readFromFile('./db/db.json'.then((data) => res.json(JSON.parse(data))));
+    fileRead('./db/db.json'.then((data) => res.json(JSON.parse(data))));
 });
 
 notes.post('/', (req, res) => {
