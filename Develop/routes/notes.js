@@ -32,10 +32,10 @@ notes.post('/', (req, res) => {
 notes.get('/:note_id', (req, res) => {
     if (req.params.note_id) {
         console.log("Showing note with selected ID.")
-        const noteID = req.params.note_id;
+        const noteID = req.params.id;
         for (let i = 0; i < db.length; i++) {
             const currentNote = db[i];
-            if (currentNote.note_id === noteID) {
+            if (currentNote.id === noteID) {
                 res.json(currentNote);
                 return;
             };

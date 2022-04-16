@@ -30,16 +30,8 @@ const getNotes = () =>
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-    }.then((res) => res.json()),
+    },
   });
-
-// const getTerms = async () => {
-//   const result = await fetch("/api/terms", {
-//     method: "GET",
-//   });
-//   const json = await result.json();
-//   return json;
-// };
 
 const saveNote = (note) =>
   fetch("/api/notes", {
