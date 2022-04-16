@@ -18,7 +18,7 @@ notes.post('/', (req, res) => {
             text,
             note_id: idGen(),
         };
-        readAndAppend(newNote, './db/db.json');
+        readThenAppend(newNote, './db/db.json');
         const response = {
             status: 'Saved',
             body: newNote,
