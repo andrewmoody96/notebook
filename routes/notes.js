@@ -2,11 +2,11 @@ const express = require('express');
 const notes = express.Router();
 const db = require('../db/db.json');
 const idGen = require('../helpers/idGen');
-const { fileRead, readThenAppend } = require('../helpers/fsUtils');
+const { fileRead, readThenAppend, fileWrite} = require('../helpers/fsUtils');
 
 
 notes.get('/', (req, res) => {
-    console.log('Request Received');
+    console.info(`${req.method} Request Received`);
     fileRead('./db/db.json'.then((data) => res.json(JSON.parse(data))));
 });
 
@@ -57,7 +57,7 @@ notes.delete('/:note_id', (req, res) => {
         newDB = db.filter(note => note.note_id !== noteID)
         console.info(db);
         console.info(newDB);
-        writeToFile('./db/db.json', newDB);
+        fileWrite('./db/db.json', newDB);
         res.json(db);
         return;
     } else {
