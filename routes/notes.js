@@ -8,7 +8,7 @@ const { info } = require('console');
 
 notes.get('/', (req, res) => {
     console.info(`${req.method} Request Received`);
-    fileRead('./db/db.json'.then((data) => res.json(JSON.parse(data))));
+    fileRead('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 notes.post('/', (req, res) => {
