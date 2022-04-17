@@ -11,7 +11,7 @@ notes.get('/', (req, res) => {
     fileRead('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-notes.post('/', (req, res) => {
+notes.post('/api/notes', (req, res) => {
     console.info('Adding note');
     const { title, text } = req.body;
     if (title && text) {
@@ -31,7 +31,7 @@ notes.post('/', (req, res) => {
     }
 });
 
-notes.get('/:note_id', (req, res) => {
+notes.get('/api/notes/:note_id', (req, res) => {
     if (req.params.note_id) {
         console.info("Showing note with selected ID.")
         const noteID = req.params.note_id;
@@ -50,7 +50,7 @@ notes.get('/:note_id', (req, res) => {
 
 let newDB = [];
 
-notes.delete('/:note_id', (req, res) => {
+notes.delete('/api/notes/:note_id', (req, res) => {
     //something
     if (req.params.note_id) {
         console.info(`${req.method} request received to delete a note`);

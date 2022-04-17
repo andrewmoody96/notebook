@@ -1,5 +1,5 @@
-const fs = require("fs");
-const util = require("util");
+const fs = require('fs');
+const util = require('util');
 
 // FUNCTIONS
 // Reads the file, but as a promise.
