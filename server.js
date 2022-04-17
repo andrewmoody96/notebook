@@ -8,11 +8,10 @@ const { fileRead, readThenAppend } = require('./helpers/fsUtils');
 const api = require("./routes/api")
 
 // MIDDLEWARE
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
-// Defines route for API calls from Express
+app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
+app.use(express.static("public"));
 
 
 app.get("/notes", (req, res) =>

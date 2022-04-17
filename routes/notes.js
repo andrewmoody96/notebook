@@ -1,8 +1,9 @@
 const express = require('express');
 const notes = express.Router();
-const db = require('../db/db.json');
-const idGen = require('../helpers/idGen');
 const { fileRead, readThenAppend, fileWrite} = require('../helpers/fsUtils');
+const idGen = require('../helpers/idGen');
+let db = require('../db/db.json');
+const { info } = require('console');
 
 
 notes.get('/', (req, res) => {
@@ -11,7 +12,7 @@ notes.get('/', (req, res) => {
 });
 
 notes.post('/', (req, res) => {
-    console.log('Adding note');
+    console.info('Adding note');
     const { title, text } = req.body;
     if (title && text) {
         const newNote = {
@@ -32,7 +33,7 @@ notes.post('/', (req, res) => {
 
 notes.get('/:note_id', (req, res) => {
     if (req.params.note_id) {
-        console.log("Showing note with selected ID.")
+        console.info("Showing note with selected ID.")
         const noteID = req.params.note_id;
         for (let i = 0; i < db.length; i++) {
             const currentNote = db[i];
