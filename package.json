@@ -1,5 +1,5 @@
 {
-  "name": "note-taker",
+  "name": "notebook",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -11,6 +11,17 @@
   "dependencies": {
     "express": "^4.16.4"
   },
+  "engines": {
+    "node": "16.14.2"
+  },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmoody96/notebook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewmoody96/notebook/issues"
+  },
+  "homepage": "https://github.com/andrewmoody96/notebook#readme",
   "description": ""
 }
