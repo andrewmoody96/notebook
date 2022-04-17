@@ -33,10 +33,10 @@ notes.post('/', (req, res) => {
 notes.get('/:note_id', (req, res) => {
     if (req.params.note_id) {
         console.log("Showing note with selected ID.")
-        const noteID = req.params.id;
+        const noteID = req.params.note_id;
         for (let i = 0; i < db.length; i++) {
             const currentNote = db[i];
-            if (currentNote.id === noteID) {
+            if (currentNote.note_id === noteID) {
                 res.json(currentNote);
                 return;
             };
@@ -46,6 +46,9 @@ notes.get('/:note_id', (req, res) => {
         res.status(404).send('No ID provided.')
     };
 });
+
+let newDB = [];
+
 
 
 module.exports = notes;
