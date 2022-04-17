@@ -25,7 +25,7 @@ npm i
 
 Click 'Get Started', add a title to your note, then add some text. You will see your note saved to the list on your left hand side for later reference.
 
-![Tux, the Linux mascot](/Assets/images/)
+![Notebook Screenshot](/Assets/images/notebook-screenshot.png)
 
 ---
 ## Contributing
