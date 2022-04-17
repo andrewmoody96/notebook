@@ -38,8 +38,7 @@ notes.get('/api/notes/:note_id', (req, res) => {
         for (let i = 0; i < db.length; i++) {
             const currentNote = db[i];
             if (currentNote.note_id === noteID) {
-                res.json(currentNote);
-                return;
+                return (res.json(currentNote))
             };
         };
         res.status(404).send('No notes matching selected ID.');
