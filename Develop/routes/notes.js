@@ -49,6 +49,20 @@ notes.get('/:note_id', (req, res) => {
 
 let newDB = [];
 
-
+notes.delete('/:note_id', (req, res) => {
+    //something
+    if (req.params.note_id) {
+        console.info(`${req.method} request received to delete a note`);
+        const noteID = req.params.note_id;
+        newDB = db.filter(note => note.note_id !== noteID)
+        console.info(db);
+        console.info(newDB);
+        writeToFile('./db/db.json', newDB);
+        res.json(db);
+        return;
+    } else {
+        res.status(400).send('Note ID not provided');
+    };
+});
 
 module.exports = notes;

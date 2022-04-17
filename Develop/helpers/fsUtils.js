@@ -5,7 +5,7 @@ const util = require("util");
 // Reads the file, but as a promise.
 const fileRead = util.promisify(fs.readFile);
 
-const writeToFile = (location, content) =>
+const fileWrite = (location, content) =>
   fs.writeFile(location, JSON.stringify(content, null, 4), (err) =>
     err ? console.error(err) : console.info(`content saved to ${location}`)
   );
@@ -17,10 +17,10 @@ const readThenAppend = (content, file) => {
     } else {
       const parsedData = JSON.parse(data);
       parsedData.push(content);
-      writeToFile(file, parsedData);
+      fileWrite(file, parsedData);
     }
   });
 };
 
 
-module.exports = { fileRead, writeToFile, readThenAppend};
+module.exports = { fileRead, fileWrite, readThenAppend};
