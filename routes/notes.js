@@ -49,7 +49,7 @@ notes.get('/:note_id', (req, res) => {
 
 let newDB = [];
 
-notes.delete('/api/notes/:note_id', (req, res) => {
+notes.delete('/:note_id', (req, res) => {
     //something
     if (req.params.note_id) {
         console.info(`${req.method} request received to delete a note`);
