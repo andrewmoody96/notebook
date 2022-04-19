@@ -5,6 +5,8 @@
 
 This app allows users to enter, delete, and review notes that they've entered into the application.
 
+*****DELETING A NOTE CLEARS ALL NOTES... Will update in later deployments.*****
+
 ---
 ## Table of Contents
 
@@ -26,6 +28,11 @@ npm i
 Click 'Get Started', add a title to your note, then add some text. You will see your note saved to the list on your left hand side for later reference.
 
 ![Notebook Screenshot](/Assets/images/notebook-screenshot.png)
+
+<br>
+
+[Notebook Video Demo](https://drive.google.com/file/d/1bkzysx1feUCL_ev7ecCLlgIzys5cPO5c/view?usp=sharing)
+
 
 ---
 ## Contributing
